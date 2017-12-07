@@ -16,15 +16,8 @@ class Stock:
     def price(self):
         return self.price_history[-1][1] \
             if self.price_history else None
-        # if self.price_history:
-        #     return self.price_history[-1]
-        # else:
-        #     return None
 
     def is_increasing_trend(self):
         return self.price_history[-3][1] < \
             self.price_history[-2][1] < \
             self.price_history[-1][1]
-
-
-
