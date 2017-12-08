@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Rule:
 
     def __init__(self, symbol, condition):
@@ -38,3 +41,4 @@ print(newrule.match(zespol))
 # print(funkcja["division"].result)
 
 # print(newrule.match(funkcja))
+
