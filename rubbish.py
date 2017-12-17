@@ -1,44 +1,13 @@
-from datetime import datetime
+from unittest import mock
 
 
-class Rule:
+class PrintAction:
+    def run(self, description):
+        print("{} was executed".format(description))
 
-    def __init__(self, symbol, condition):
-        self.symbol = symbol
-        self.condition = condition
+mock1 = mock.Mock()
+print(mock1.execute("sample alert"))
+print(mock1.sssij())
 
-    def match(self, what):
-        this = what[self.symbol]
-        return self.condition(this)
-
-
-class Function:
-
-    def __init__(self, symbol):
-        self.symbol = symbol
-        self.result = None
-
-
-funkcja = {"division": Function("division")}
-
-nowaf = Function("mnozenie")
-
-print(nowaf.symbol)
-
-newrule = Rule("mnozenie", lambda Func: Func.result > 2)
-
-nowaf.result = 1
-
-print(nowaf.result)
-
-zespol = {"mnozenie": nowaf}
-
-print(newrule.match(zespol))
-
-
-# funkcja["division"].result = 4
-
-# print(funkcja["division"].result)
-
-# print(newrule.match(funkcja))
-
+mock2 = mock.Mock(spec=PrintAction)
+# mock2.execute("sample alert")
